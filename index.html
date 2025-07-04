@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>우성이의 냉장고</title>
+  <style>
+    nav a {
+      font-size: 32px;
+      margin-right: 20px;
+      text-decoration: none;
+      color: black;
+    }
+    nav a:hover {
+      color: darkblue;
+    }
+    .box {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+    .box1, .box2 {
+      width: 350px;
+      height: 350px;
+      border: 2px solid #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .box1 img,
+    .box2 img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+    }
+    h2 {
+      text-align: center;
+    }
+    .총자판기 {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .자판기 {
+      border: 2px solid #000;
+      width: 500px;
+      padding: 10px;
+    }
+    .자판기 h3 {
+      text-align: center;
+    }
+    .상품 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 상품 3개씩 한 줄 */
+      gap: 20px;
+      justify-items: center;
+    }
+    .item {
+      text-align: center;
+      width: 120px;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.15s ease-in-out;
+      border-radius: 8px;
+      padding: 5px;
+      border: 1px solid transparent;
+    }
+    .item:hover {
+      transform: scale(1.05);
+      border-color: #000000;
+      background-color: #fafdb4;
+    }
+    .item img {
+      width: 100px;
+      height: auto;
+      pointer-events: none;
+      user-select: none;
+      border-radius: 5px;
+    }
+    .찜 {
+      font-size: 30px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin: 30px 0;
+    }
+    .찜박스 {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .heart {
+      border: 2px solid #000;
+      width: 500px;
+      padding: 10px;
+      min-height: 250px;
+      background-color: #fff8f8;
+      border-radius: 10px;
+    }
+    .heart h3 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    /* 찜 목록 안 아이템 스타일 다르게 해서 클릭 삭제 가능하다고 인지하기 쉽게 */
+    .찜 .item {
+      cursor: pointer;
+      border-color: #f00;
+      background-color: #ffe6e6;
+      transition: background-color 0.2s;
+    }
+    .찜 .item:hover {
+      background-color: #ffcccc;
+    }
+   .buy {
+      width: 100px;
+      height: 50px;
+      border: 2px solid #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+    }
+    .buy:hover{
+      background-color: #dd3333;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🛒 우성이의 냉장고</h1>
+    <nav>
+      <a href="#2층">2층</a> |
+      <a href="#3층">3층</a> |
+      <a href="#4층">4층</a>
+    </nav>
+    <hr />
+  </header>
+
+  <h2>공지사항</h2>
+  <div class="box">
+    <div class="box1">
+      <img src="https://via.placeholder.com/400" alt="이미지 1" />
+    </div>
+    <div class="box2">
+      <img src="https://via.placeholder.com/400" alt="이미지 2" />
+    </div>
+  </div>
+
+  <!-- 2층 -->
+  <h2 id="2층">2층</h2>
+  <div class="총자판기">
+    <div class="자판기">
+      <h3>과자 자판기</h3>
+      <div class="상품">
+        <div class="item" data-category="과자"><img src="https://via.placeholder.com/150" alt="상품 1" /><p>상품 1</p><p>₩10,000</p></div>
+        <div class="item" data-category="과자"><img src="https://via.placeholder.com/150" alt="상품 2" /><p>상품 2</p><p>₩15,000</p></div>
+        <div class="item" data-category="과자"><img src="https://via.placeholder.com/150" alt="상품 3" /><p>상품 3</p><p>₩15,000</p></div>
+        <div class="item" data-category="과자"><img src="https://via.placeholder.com/150" alt="상품 4" /><p>상품 4</p><p>₩15,000</p></div>
+        <div class="item" data-category="과자"><img src="https://via.placeholder.com/150" alt="상품 5" /><p>상품 5</p><p>₩15,000</p></div>
+        <div class="item" data-category="과자"><img src="https://via.placeholder.com/150" alt="상품 6" /><p>상품 6</p><p>₩15,000</p></div>
+      </div>
+    </div>
+
+    <div class="자판기">
+      <h3>음료수 자판기</h3>
+      <div class="상품">
+        <div class="item" data-category="음료수"><img src="https://via.placeholder.com/150" alt="상품 1" /><p>상품 1</p><p>₩15,000</p></div>
+        <div class="item" data-category="음료수"><img src="https://via.placeholder.com/150" alt="상품 2" /><p>상품 2</p><p>₩15,000</p></div>
+        <div class="item" data-category="음료수"><img src="https://via.placeholder.com/150" alt="상품 3" /><p>상품 3</p><p>₩15,000</p></div>
+        <div class="item" data-category="음료수"><img src="https://via.placeholder.com/150" alt="상품 4" /><p>상품 4</p><p>₩15,000</p></div>
+        <div class="item" data-category="음료수"><img src="https://via.placeholder.com/150" alt="상품 5" /><p>상품 5</p><p>₩15,000</p></div>
+        <div class="item" data-category="음료수"><img src="https://via.placeholder.com/150" alt="상품 6" /><p>상품 6</p><p>₩15,000</p></div>
+      </div>
+    </div>
+  </div>
+
+  <hr />
+
+  <!-- 3층 -->
+  <h2 id="3층">3층</h2>
+  <div class="총자판기">
+    <div class="자판기">
+      <h3>과자 자판기</h3>
+      <div class="상품">
+        <div class="item" data-category="과자"><img src="https://via.placeholder.com/150" alt="상품 1" /><p>상품 1</p><p>₩10,000</p></div>
+        <div class="item" data-category="과자"><img src="https://via.placeholder.com/150" alt="상품 2" /><p>상품 2</p><p>₩15,000</p></div>
+        <div class="item" data-category="과자"><img src="https://via.placeholder.com/150" alt="상품 3" /><p>상품 3</p><p>₩15,000</p></div>
+        <div class="item" data-category="과자"><img src="https://via.placeholder.com/150" alt="상품 4" /><p>상품 4</p><p>₩15,000</p></div>
+        <div class="item" data-category="과자"><img src="https://via.placeholder.com/150" alt="상품 5" /><p>상품 5</p><p>₩15,000</p></div>
+        <div class="item" data-category="과자"><img src="https://via.placeholder.com/150" alt="상품 6" /><p>상품 6</p><p>₩15,000</p></div>
+      </div>
+    </div>
+
+    <div class="자판기">
+      <h3>음료수 자판기</h3>
+      <div class="상품">
+        <div class="item" data-category="음료수"><img src="https://via.placeholder.com/150" alt="상품 1" /><p>상품 1</p><p>₩10,000</p></div>
+        <div class="item" data-category="음료수"><img src="https://via.placeholder.com/150" alt="상품 2" /><p>상품 2</p><p>₩15,000</p></div>
+        <div class="item" data-category="음료수"><img src="https://via.placeholder.com/150" alt="상품 3" /><p>상품 3</p><p>₩15,000</p></div>
+        <div class="item" data-category="음료수"><img src="https://via.placeholder.com/150" alt="상품 4" /><p>상품 4</p><p>₩15,000</p></div>
+        <div class="item" data-category="음료수"><img src="https://via.placeholder.com/150" alt="상품 5" /><p>상품 5</p><p>₩15,000</p></div>
+        <div class="item" data-category="음료수"><img src="https://via.placeholder.com/150" alt="상품 6" /><p>상품 6</p><p>₩15,000</p></div>
+      </div>
+    </div>
+  </div>
+
+  <hr />
+
+  <!-- 4층 -->
+  <h2 id="4층">4층</h2>
+  <div class="총자판기">
+    <div class="자판기">
+      <h3>과자 자판기</h3>
+      <div class="상품">
+        <div class="item" data-category="과자"><img src="https://via.placeholder.com/150" alt="상품 1" /><p>상품 1</p><p>₩10,000</p></div>
+        <div class="item" data-category="과자"><img src="https://via.placeholder.com/150" alt="상품 2" /><p>상품 2</p><p>₩15,000</p></div>
+        <div class="item" data-category="과자"><img src="https://via.placeholder.com/150" alt="상품 3" /><p>상품 3</p><p>₩15,000</p></div>
+        <div class="item" data-category="과자"><img src="https://via.placeholder.com/150" alt="상품 4" /><p>상품 4</p><p>₩15,000</p></div>
+        <div class="item" data-category="과자"><img src="https://via.placeholder.com/150" alt="상품 5" /><p>상품 5</p><p>₩15,000</p></div>
+        <div class="item" data-category="과자"><img src="https://via.placeholder.com/150" alt="상품 6" /><p>상품 6</p><p>₩15,000</p></div>
+      </div>
+    </div>
+
+    <div class="자판기">
+      <h3>음료수 자판기</h3>
+      <div class="상품">
+        <div class="item" data-category="음료수"><img src="https://via.placeholder.com/150" alt="상품 1" /><p>상품 1</p><p>₩10,000</p></div>
+        <div class="item" data-category="음료수"><img src="https://via.placeholder.com/150" alt="상품 2" /><p>상품 2</p><p>₩15,000</p></div>
+        <div class="item" data-category="음료수"><img src="https://via.placeholder.com/150" alt="상품 3" /><p>상품 3</p><p>₩15,000</p></div>
+        <div class="item" data-category="음료수"><img src="https://via.placeholder.com/150" alt="상품 4" /><p>상품 4</p><p>₩15,000</p></div>
+        <div class="item" data-category="음료수"><img src="https://via.placeholder.com/150" alt="상품 5" /><p>상품 5</p><p>₩15,000</p></div>
+        <div class="item" data-category="음료수"><img src="https://via.placeholder.com/150" alt="상품 6" /><p>상품 6</p><p>₩15,000</p></div>
+      </div>
+    </div>
+  </div>
+
+  <hr />
+
+  <!-- 찜 목록 -->
+  <div class="찜">
+    찜 목록
+    <div class="찜박스">
+      <!-- 과자 찜 박스 -->
+      <div class="heart">
+        <h3>과자 자판기</h3>
+        <div class="상품"></div>
+      </div>
+
+      <!-- 음료수 찜 박스 -->
+      <div class="heart">
+        <h3>음료수 자판기</h3>
+        <div class="상품"></div>
+      </div>
+    </div>
+  </div>
+  <div class="buy" id="buyBtn">
+    <h5>구매확정</h5>
+    </div>
+   
+    <script>
+    // 찜 박스 DOM 요소
+    const 과자찜박스 = document.querySelectorAll('.heart')[0].querySelector('.상품');
+    const 음료찜박스 = document.querySelectorAll('.heart')[1].querySelector('.상품');
+
+    // 자판기 내 모든 상품들
+    const allItems = document.querySelectorAll('.자판기 .item');
+
+    allItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const category = item.dataset.category; // "과자" or "음료수"
+        const name = item.querySelectorAll('p')[0].textContent;
+        const price = item.querySelectorAll('p')[1].textContent;
+        const imgSrc = item.querySelector('img').src;
+
+        // 찜 박스 결정
+        const 찜박스 = category === '과자' ? 과자찜박스 : 음료찜박스;
+
+        // 중복 확인
+        const 중복여부 = Array.from(찜박스.children).some(찜아이템 => {
+          return 찜아이템.querySelector('p').textContent === name;
+        });
+        if (중복여부) {
+          alert(`"${name}"은(는) 이미 찜 목록에 있습니다.`);
+          return;
+        }
+
+        // 찜 아이템 생성
+        const 찜아이템 = document.createElement('div');
+        찜아이템.className = 'item';
+        찜아이템.innerHTML = `
+          <img src="${imgSrc}" alt="${name}" />
+          <p>${name}</p>
+          <p>${price}</p>
+        `;
+
+        찜박스.appendChild(찜아이템);
+      });
+    });
+
+    // 찜 목록에서 클릭하면 삭제 (이벤트 위임)
+    document.querySelectorAll('.찜박스 .상품').forEach(박스 => {
+      박스.addEventListener('click', e => {
+        const targetItem = e.target.closest('.item');
+        if (targetItem) {
+          박스.removeChild(targetItem);
+        }
+      });
+    });
+   document.getElementById('buyBtn').addEventListener('click', () => {
+  alert('구매가 확정되었습니다!');  
+    과자찜박스.innerHTML = '';
+  음료찜박스.innerHTML = '';
+   
+  });
+ 
+  </script>
+
+</body>
+</html>
